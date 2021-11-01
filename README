@@ -1,0 +1,7 @@
+TODO: build a baller GUI with a search bar
+    * first step, maybe just request all the videos
+        do a get from your App and list them nicely
+
+deploy to amplify using these steps: 
+    https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/module-one/?e=gs2020&p=build-a-react-app-intro
+
