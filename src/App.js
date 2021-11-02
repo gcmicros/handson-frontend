@@ -16,23 +16,27 @@ export default class App extends Component {
     }
 
     makeButtonHTML(data) {
+        var str = data.ConvertS3Url.substring(21)
+        var link = "https://gcm-handson-test.s3.us-west-2.amazonaws.com" + str
         return (
             `<div>
-                <p> ` + data.ShortDescriptio + `</p>
+                <p> ` + data.Name + `</p>
                 <video
                     controls preload="auto" width="640" height="480">
-                    <source src=` + data.OriginalS3Url + ` /> 
+                    <source src=` + link + ` /> 
                 </video>
             </div>`
         );
     }
     makeButton(data) {
+        var str = data.ConvertS3Url.substring(21)
+        var link = "https://gcm-handson-test.s3.us-west-2.amazonaws.com" + str
         return (
             <div>
-                <p> {data.ShortDescriptio} </p>
+                <p> {data.Name} </p>
                 <video
                     controls preload="auto" width="640" height="480">
-                    <source src={data.OriginalS3Url} /> 
+                    <source src={link} /> 
                 </video>
             </div>
         );
@@ -90,12 +94,12 @@ export default class App extends Component {
                 return
             }
            console.log(value.data)
-           _this.setState({items: value.data});
+           //_this.setState({items: value.data});
             var videos = document.getElementById('the-videos')
             if (videos ==  null) {
                 return;
             }
-            videos.innerHTML =  "<p>Results for " + search.value + "</p>" + this.state.items.map(this.makeButtonHTML, this) 
+            videos.innerHTML =  "<p>Results for " + search.value + "</p>" + value.data.map(this.makeButtonHTML, this) 
         });
     }
 
