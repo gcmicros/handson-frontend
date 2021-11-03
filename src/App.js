@@ -36,7 +36,7 @@ export default class App extends Component {
                 <p> {data.Name} </p>
                 <video
                     controls preload="auto" width="640" height="480">
-                    <source src={link} /> 
+                    <source src={data.OriginalS3Url} /> 
                 </video>
             </div>
         );
